@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+INDEX
+{% endblock %}
+
+{% block main %}
+    <table>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Shares</th>
+                    <th scope="col">Buy price</th>
+                    <th scope="col">Current price</th>
+                    <th scope="col">Transacted</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in stockz %}
+                <tr>
+                <td>{{stock["symbol"]}}</td>
+                <td>{{stock["name"]}}</td>
+                <td>{{stock["shares"]}}</td>
+                <td>{{stock["price"]  | usd}}</td>
+                <td>{{stock["cur_price"] | usd}}</td>
+                <td>{{stock["date"] }}</td>
+                </tr>
+                {% endfor%}
+                <tr>
+                    <td></td><td></td><td></td><td></td>
+                    <td><b>Cash</b></td>
+
+                    <td><b>{{cash}}</b></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td>
+                    <td><b>TOTAL</b></td>
+                    <td><b>{{total}}</b></td>
+
+                </tr>
+
+            </tbody>
+
+    </table>
+{% endblock %}

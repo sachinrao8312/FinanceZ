@@ -1,0 +1,30 @@
+{% extends "layout.html"%}
+
+{% block title %}
+    Quoted
+{% endblock%}
+
+{% block main %}
+  <p><h2>Stock Details</h2></p>
+  <div>
+    <table class="table table-striped">
+
+    <tr>
+        <h4>Name: {{symbol["name"]}}</h4>
+    </tr>
+    <br>
+    <tr>
+        <h4>Symbol: {{symbol["symbol"]}}</h4>
+    </tr>
+    <br>
+    <tr>
+       <h4>Price: {{symbol["price"] | usd}}</h4>
+    </tr>
+    <br>
+</table>
+
+
+  </div>
+
+
+{% endblock%}
